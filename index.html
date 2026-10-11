@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Template Creator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
+    <header class="bg-slate-800 border-b border-slate-700 py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center space-x-3">
+            <div class="bg-indigo-600 p-2 rounded-lg text-white"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h1 class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">AI Prompt Creator</h1>
+        </div>
+        <button onclick="alert('Simpan file ini sebagai index.html dan upload ke GitHub/Vercel secara gratis!')" class="text-xs bg-indigo-600 hover:bg-indigo-500 px-3 py-2 rounded-lg font-medium transition">Panduan Jual</button>
+    </header>
+    <main class="flex-grow container mx-auto p-4 md:p-6 max-w-4xl">
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-xl">
+            <h2 class="text-lg font-semibold mb-4 text-indigo-300">Pilih Kebutuhan & Topik</h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Topik / Produk Anda</label>
+                    <input type="text" id="topicInput" placeholder="Contoh: Kopi Susu Gula Aren untuk anak muda" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-slate-100 focus:outline-none focus:border-indigo-500">
+                </div>
+                <div class="flex gap-4">
+                    <button onclick="generatePrompt()" class="flex-1 bg-indigo-600 hover:bg-indigo-500 font-semibold py-3 rounded-lg transition shadow-lg shadow-indigo-600/30">Buat Prompt Sekarang</button>
+                </div>
+            </div>
+            <div class="mt-6">
+                <label class="block text-sm font-medium text-slate-300 mb-1">Hasil Prompt AI:</label>
+                <textarea id="outputResult" rows="6" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg p-4 text-slate-300 font-mono text-sm focus:outline-none" placeholder="Hasil prompt otomatis akan muncul di sini..."></textarea>
+            </div>
+        </div>
+    </main>
+    <script>
+        function generatePrompt() {
+            const topic = document.getElementById('topicInput').value.trim();
+            if(!topic) { alert('Silakan isi topik/produk terlebih dahulu!'); return; }
+            const result = `Bertindaklah sebagai Copywriter profesional. Buatkan strategi konten promosi dan teks penawaran yang menarik untuk produk: "${topic}". Berikan hasil yang kreatif, persuasif, dan siap pakai.`;
+            document.getElementById('outputResult').value = result;
+        }
+    </script>
+</body>
+</html>
