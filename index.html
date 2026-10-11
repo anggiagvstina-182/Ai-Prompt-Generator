@@ -3,82 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Prompt Template Creator</title>
+    <title>AI Mega-Prompt Generator Pro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
-    <header class="bg-slate-800 border-b border-slate-700 py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+    <!-- Header -->
+    <header class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 py-4 px-6 flex justify-between items-center sticky top-0 z-50">
         <div class="flex items-center space-x-3">
-            <div class="bg-indigo-600 p-2 rounded-lg text-white"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-            <h1 class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">AI Prompt Creator</h1>
+            <div class="bg-gradient-to-tr from-indigo-500 via-purple-600 to-pink-500 p-2.5 rounded-xl text-white shadow-lg shadow-indigo-500/25">
+                <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+            </div>
+            <div>
+                <h1 class="text-base md:text-lg font-bold bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">AI Prompt Engineer Pro</h1>
+                <p class="text-[10px] text-slate-400 tracking-wide">Enterprise Grade Prompt Generator</p>
+            </div>
         </div>
-        <button onclick="alert('Aplikasi ini aktif secara online dan siap digunakan atau dijual!')" class="text-xs bg-indigo-600 hover:bg-indigo-500 px-3 py-2 rounded-lg font-medium transition text-white">Info</button>
+        <div class="flex items-center space-x-2">
+            <span class="text-[11px] bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-3 py-1 rounded-full font-semibold flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> v2.0 Stable
+            </span>
+        </div>
     </header>
-    
+
+    <!-- Main Container -->
     <main class="flex-grow container mx-auto p-4 md:p-6 max-w-4xl">
-        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-xl space-y-4">
-            <h2 class="text-lg font-semibold text-indigo-300"><i class="fa-solid fa-pen-to-square mr-2"></i>Buat Prompt Otomatis</h2>
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 md:p-8 shadow-2xl space-y-6">
             
-            <div>
-                <label class="block text-sm font-medium text-slate-300 mb-1">Topik / Produk / Bisnis Anda</label>
-                <input type="text" id="topicInput" placeholder="Contoh: Jasa Cuci Sepatu Kilat di Jakarta" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-indigo-500">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-lg md:text-xl font-bold text-slate-100 flex items-center gap-2">
+                    <i class="fa-solid fa-sliders text-indigo-400"></i> Konfigurasi Parameter Prompt
+                </h2>
+                <p class="text-xs text-slate-400 mt-1">Sesuaikan variabel di bawah untuk menghasilkan Mega-Prompt presisi tinggi bagi ChatGPT atau Gemini.</p>
             </div>
 
-            <div>
-                <label class="block text-sm font-medium text-slate-300 mb-1">Pilih Kebutuhan</label>
-                <select id="categoryInput" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-indigo-500">
-                    <option value="copywriting">Iklan & Copywriting Penjualan (IG/TikTok)</option>
-                    <option value="content">Ide Konten / Jadwal Posting Sosmed</option>
-                    <option value="seo">Artikel SEO / Deskripsi Produk Tokopedia</option>
-                </select>
+            <!-- Form Inputs -->
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">1. Nama Produk / Bisnis / Topik Utama <span class="text-pink-500">*</span></label>
+                    <input type="text" id="topicInput" placeholder="Contoh: Agensi Digital Marketing UMKM / Kopi Susu Aren" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-sm transition">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">2. Target Audiens Spesifik</label>
+                        <input type="text" id="audienceInput" placeholder="Contoh: Pemilik UMKM usia 25-45 tahun" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 text-sm transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">3. Gaya Bahasa (Tone of Voice)</label>
+                        <select id="toneInput" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-indigo-500 text-sm transition">
+                            <option value="Persuasif, Gaul, & Santai khas Anak Muda">Persuasif, Gaul & Santai (Cocok Sosmed)</option>
+                            <option value="Profesional, Elegan, & Membangun Kepercayaan">Profesional & Elegan (B2B / Toko Resmi)</option>
+                            <option value="Emosional, Storytelling, & Menyentuh Hati">Storytelling & Emosional (Soft-Selling)</option>
+                            <option value="To-the-point, Mendesak (FOMO), & Agresif">FOMO & Penjualan Cepat (Flash Sale / Hard-Sell)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">4. Modul Output AI yang Diinginkan</label>
+                    <select id="moduleInput" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-indigo-500 text-sm transition">
+                        <option value="copywriting_master">Master Copywriting Ads & Caption (Framework AIDA & PAS)</option>
+                        <option value="content_calendar">30-Day Social Media Content Calendar & Hook Strategy</option>
+                        <option value="landing_page">Lengkap: Draft Landing Page / Website Penjualan High-Conversion</option>
+                        <option value="script_video">Script Video Pendek (TikTok/Reels/Shorts) dengan Visual Cue</option>
+                    </select>
+                </div>
             </div>
 
-            <button onclick="generatePrompt()" class="w-full bg-indigo-600 hover:bg-indigo-500 font-semibold py-3 rounded-lg transition shadow-lg shadow-indigo-600/30 text-white cursor-pointer">
-                <i class="fa-solid fa-bolt mr-2"></i> Generate Prompt Sekarang
+            <!-- Action Button -->
+            <button onclick="generateMegaPrompt()" class="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:opacity-90 font-bold py-4 rounded-xl transition-all shadow-lg shadow-indigo-500/25 text-white flex items-center justify-center space-x-2 text-sm md:text-base cursor-pointer active:scale-[0.99]">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>Rangkai Mega-Prompt Sekarang</span>
             </button>
 
-            <div class="mt-4">
-                <div class="flex justify-between items-center mb-1">
-                    <label class="text-sm font-medium text-slate-300">Hasil Prompt AI:</label>
-                    <button onclick="copyResult()" class="text-xs bg-slate-700 hover:bg-slate-600 text-indigo-300 px-2.5 py-1 rounded transition"><i class="fa-regular fa-copy mr-1"></i> Salin Teks</button>
+            <!-- Output Box -->
+            <div class="pt-2 space-y-2">
+                <div class="flex justify-between items-center">
+                    <label class="text-xs font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <i class="fa-solid fa-code"></i> Hasil Mega-Prompt Siap Pakai:
+                    </label>
+                    <button id="copyBtn" onclick="copyResult()" class="text-xs bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 px-3.5 py-1.5 rounded-lg transition flex items-center gap-1.5 cursor-pointer active:scale-95">
+                        <i class="fa-regular fa-copy text-indigo-400"></i> <span id="copyText">Salin Prompt</span>
+                    </button>
                 </div>
-                <textarea id="outputResult" rows="6" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg p-4 text-slate-300 font-mono text-sm focus:outline-none" placeholder="Hasil prompt otomatis akan muncul di sini setelah Anda klik tombol di atas..."></textarea>
+                <textarea id="outputResult" rows="12" readonly class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-slate-300 font-mono text-xs leading-relaxed focus:outline-none focus:border-indigo-500 resize-y" placeholder="Mega-Prompt tingkat lanjut akan otomatis terstruktur dan muncul di sini setelah Anda menekan tombol di atas..."></textarea>
             </div>
+            
+            <!-- Quick Link to AI Platforms -->
+            <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+                <span><i class="fa-solid fa-circle-info text-indigo-400 mr-1"></i> Setelah disalin, tempelkan hasilnya langsung ke platform AI pilihan Anda:</span>
+                <div class="flex gap-2 w-full sm:w-auto">
+                    <a href="https://chatgpt.com" target="_blank" class="flex-1 sm:flex-none bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-center transition font-medium">ChatGPT ↗</a>
+                    <a href="https://gemini.google.com" target="_blank" class="flex-1 sm:flex-none bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-center transition font-medium">Gemini ↗</a>
+                </div>
+            </div>
+
         </div>
     </main>
 
+    <!-- Footer -->
+    <footer class="py-6 text-center text-xs text-slate-500 border-t border-slate-900">
+        AI Prompt Engineer Pro &bull; Dibangun Tanpa Modal & Siap Dimonetisasi
+    </footer>
+
+    <!-- JavaScript Logic -->
     <script>
-        function generatePrompt() {
-            const topic = document.getElementById('topicInput').value.trim();
-            const category = document.getElementById('categoryInput').value;
-            
-            if(!topic) {
-                alert('Silakan isi topik atau produk terlebih dahulu!');
+        function generateMegaPrompt() {
+            const topicInput = document.getElementById('topicInput');
+            const topic = topicInput.value.trim();
+            const audience = document.getElementById('audienceInput').value.trim() || 'Masyarakat umum dan calon pembeli potensial';
+            const tone = document.getElementById('toneInput').value;
+            const moduleType = document.getElementById('moduleInput').value;
+
+            // Validasi ketat agar tidak kosong
+            if (!topic) {
+                alert('Harap isi Nama Produk / Bisnis / Topik Utama terlebih dahulu!');
+                topicInput.focus();
+                topicInput.style.borderColor = '#ec4899';
+                setTimeout(() => { topicInput.style.borderColor = '#1e293b'; }, 2000);
                 return;
             }
 
-            let resultText = "";
-            if(category === 'copywriting') {
-                resultText = `Bertindaklah sebagai Copywriter profesional berkonversi tinggi. Buatkan 3 variasi teks iklan/caption media sosial (Instagram & TikTok) yang persuasif, memancing emosi, dan dilengkapi Call-to-Action (CTA) untuk produk/jasa: "${topic}". Target audiens adalah masyarakat umum yang aktif berbelanja online.`;
-            } else if(category === 'content') {
-                resultText = `Bertindaklah sebagai Content Strategist. Buatkan roadmap atau ide konten mingguan (7 hari) yang menarik, edukatif, dan menghibur seputar "${topic}" untuk meningkatkan *engagement* dan pengikut di media sosial.`;
-            } else {
-                resultText = `Bertindaklah sebagai SEO Expert & E-commerce Copywriter. Buatkan draf deskripsi produk yang informatif, kaya kata kunci, dan profesional untuk "${topic}" agar mudah ditemukan di mesin pencari dan marketplace.`;
+            let promptText = "";
+
+            if (moduleType === 'copywriting_master') {
+                promptText = `[ROLE & EXPERTISE]
+Bertindaklah sebagai Senior Direct-Response Copywriter berpengalaman 10+ tahun yang ahli dalam psikologi konsumen dan teknik penjualan berkonversi tinggi.
+
+[CONTEXT & PRODUCT]
+Saya ingin menjual atau mempromosikan produk/jasa berikut: "${topic}".
+Target Audiens Utama: ${audience}.
+Gaya Bahasa (Tone of Voice): ${tone}.
+
+[TASK INSTRUCTIONS]
+Buatkan 3 variasi naskah copywriting komprehensif untuk media sosial & iklan menggunakan struktur framework pemasaran teruji:
+
+VARIASI 1: Framework AIDA (Attention, Interest, Desire, Action)
+- Attention: Buat 3 pilihan Hook kalimat pertama yang memicu rasa penasaran dalam 3 detik pertama.
+- Interest: Jelaskan masalah utama yang dihadapi audiens dan kaitkan dengan produk ini.
+- Desire: Jabarkan 3 keunggulan utama & nilai tambah (benefit) produk secara emosional.
+- Action: Tulis Call-to-Action (CTA) yang jelas, tegas, dan mudah diikuti.
+
+VARIASI 2: Framework PAS (Problem, Agitate, Solution)
+- Problem: Soroti titik penderitaan (pain point) terbesar target audiens.
+- Agitate: Perjelas dampak buruk jika masalah tersebut dibiarkan tanpa solusi.
+- Solution: Hadirkan produk "${topic}" sebagai satu-satunya solusi terbaik.
+
+VARIASI 3: Soft-Selling & Storytelling
+- Naskah cerita pendek relatable yang menyentuh emosi audiens sebelum mengarahkan ke pembelian.
+
+[CONSTRAINTS & RULES]
+1. Gunakan Bahasa Indonesia yang mengalir, natural, dan sesuai gaya bahasa yang diminta.
+2. Sertakan rekomendasi emoji yang relevan untuk meningkatkan keterbacaan (readability).
+3. Berikan 5 rekomendasi Hashtag bermutu tinggi yang relevan untuk algoritma media sosial.`;
+            } 
+            else if (moduleType === 'content_calendar') {
+                promptText = `[ROLE]
+Bertindaklah sebagai Senior Social Media Strategist & Content Planner profesional.
+
+[OBJECTIVE]
+Buatkan strategi & kalender konten bulanan untuk membangun brand awareness, meningkatkan engagement, dan mendorong penjualan produk: "${topic}".
+Target Audiens: ${audience}.
+Tone of Voice: ${tone}.
+
+[OUTPUT DELIVERABLES]
+Berikan hasil dalam bentuk format terstruktur berisi:
+1. STRATEGI KONTEN (Pillars): Bagi konten menjadi 4 pilar (40% Edukasi/Solusi, 30% Entertainment/Relatable, 20% Promosi/Sales, 10% Social Proof/Testimoni).
+2. KALENDER KONTEN MINGGUAN (Contoh 7 Hari Pertama):
+   - Hari & Jenis Pilar Konten
+   - Judul Konten / Hook 3 Detik Pertama
+   - Konsep Visual / Video yang Disarankan
+   - Draf Caption Singkat & Call-To-Action (CTA)
+3. 5 Trik Rahasia untuk meningkatkan kurva keterlibatan (Engagement Rate) khusus niche produk ini.`;
+            }
+            else if (moduleType === 'landing_page') {
+                promptText = `[ROLE]
+Bertindaklah sebagai Conversion Rate Optimization (CRO) Expert & Web Copywriting Utama.
+
+[TASK]
+Buatkan draf struktur materi teks (copywriting) lengkap untuk satu halaman penjualan (Landing Page) produk: "${topic}".
+Target Pembeli: ${audience}.
+Tone of Voice: ${tone}.
+
+[REQUIRED SECTIONS]
+1. HERO SECTION:
+   - Headline Utama (Memicu perhatian & menyebutkan nilai jual unik terbesar).
+   - Sub-headline (Memperjelas solusi).
+   - Teks Tombol CTA Utama.
+2. SOCIAL PROOF / TRUST BUILDING:
+   - Draf 3 Testimoni pelanggan yang tampak sangat realistis dan meyakinkan.
+3. PAIN POINTS & SOLUTION:
+   - 4 daftar masalah audiens vs Bagaimana produk ini menyelesaikannya.
+4. FEATURE & BENEFITS:
+   - 4 Poin fitur unggulan beserta dampak positif langsung bagi pembeli.
+5. FAQ (Frequently Asked Questions):
+   - 5 Pertanyaan yang paling sering ditanyakan calon pembeli beserta jawaban meyakinkan untuk menghilangkan keraguan (objections).`;
+            }
+            else if (moduleType === 'script_video') {
+                promptText = `[ROLE]
+Bertindaklah sebagai Viral Content Creator & Director Video Pendek (TikTok, Instagram Reels, & YouTube Shorts).
+
+[TASK]
+Buatkan 2 Draf Script Video Pendek berdurasi 30-60 detik untuk mempromosikan produk: "${topic}".
+Target Penonton: ${audience}.
+Gaya Penyampaian: ${tone}.
+
+[SCRIPT FORMAT FOR EACH VIDEO]
+Sajikan script dalam bentuk daftar terstruktur: [Durasi] | [Visual & On-Screen Text] | [Audio / Voiceover / Teks Bicara].
+
+Video 1: Konsep Problem-Solving / Edukasi Kilat.
+Video 2: Konsep Trending / POV (Point of View) Relatable.
+
+Pastikan detik 0-3 memiliki Hook Visual dan Audio yang sangat kuat agar penonton tidak men-swipe video!`;
             }
 
-            document.getElementById('outputResult').value = resultText;
+            // Tampilkan hasil ke textarea
+            const outputBox = document.getElementById('outputResult');
+            outputBox.value = promptText;
+            
+            // Efek gulir otomatis ke hasil di layar HP
+            outputBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         function copyResult() {
             const outputBox = document.getElementById('outputResult');
-            if(!outputBox.value) {
-                alert('Belum ada teks untuk disalin!');
+            const copyText = document.getElementById('copyText');
+            
+            if (!outputBox.value) {
+                alert('Belum ada Mega-Prompt yang dibuat. Silakan isi form di atas lalu klik tombol "Rangkai Mega-Prompt Sekarang"!');
                 return;
             }
-            outputBox.select();
-            navigator.clipboard.writeText(outputBox.value);
-            alert('Prompt berhasil disalin ke clipboard!');
+
+            // Salin teks ke clipboard sistem
+            navigator.clipboard.writeText(outputBox.value).then(() => {
+                copyText.textContent = 'Berhasil Disalin! ✨';
+                setTimeout(() => {
+                    copyText.textContent = 'Salin Prompt';
+                }, 2500);
+            }).catch(err => {
+                // Fallback jika diblokir browser lama
+                outputBox.select();
+                document.execCommand('copy');
+                copyText.textContent = 'Berhasil Disalin! ✨';
+                setTimeout(() => { copyText.textContent = 'Salin Prompt'; }, 2500);
+            });
         }
     </script>
 </body>
